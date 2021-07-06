@@ -20,9 +20,9 @@
 
 # 安裝流程
 1. 在終端機輸入指令 Clone 此專案至本機電腦
-` `
+`git clone https://github.com/mush1200/restaurant_list_v2.git`
 2. 進入專案目錄
-` `
+`cd restaurant_list_v2`
 3. 安裝相關套件
 `npm install`
 4. 新增種子資料
