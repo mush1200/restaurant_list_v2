@@ -1,14 +1,9 @@
-const mongoose = require('mongoose')
+const db = require('../../config/mongoose')
 const Restaurant = require('../restaurant')
+
 const data = require('../../restaurant.json')
 const restaurantList = data.results
-mongoose.connect('mongodb://localhost/restaurant_list', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
 
-//連線異常
-db.on('error', () => {
-  console.log('mongodb error!')
-})
 //連線成功
 db.once('open', () => {
   console.log('mongodb connected!')
@@ -28,3 +23,4 @@ db.once('open', () => {
   )
   console.log('Success to set the seeder!')
 })
+
