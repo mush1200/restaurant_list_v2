@@ -7,9 +7,6 @@ form.addEventListener('submit', function onFormSubmitted(event) {
   }
 })
 
-
-
-
 const submitButton = document.querySelector('#submit-btn')
 submitButton.addEventListener('click', function onSubmitButtonClicked(event) {
   form.classList.add('was-validated')

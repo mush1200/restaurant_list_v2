@@ -16,7 +16,6 @@
   </div>
 </div>
 
-
 <!-- restaurant list -->
 <div class="container mt-5">
   <div class="row">
@@ -24,7 +23,6 @@
       <div>
         <h3>{{error}}</h3>
       </div>
-    
       <div class="card-columns">
         {{#each restaurants}}
         <div class="restaurants-info" style="display: inline-block;">
@@ -51,7 +49,12 @@
               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                 <a class="btn btn-outline-success" href="./restaurants/{{this._id}}/edit" role="button">Edit</a>
                 <a class="btn btn-outline-info" href="./restaurants/{{this._id}}" role="button">Detail</a>
-                <a class="btn btn-outline-danger" href="./restaurants/{{this._id}}/delete" role="button">Delete</a>
+
+                <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-outline-danger">Delete</button>
+                  {{!-- <a class="btn btn-outline-danger" role="button">Delete</a> --}}
+                </form>
+                
           
               </div>
             </div>
@@ -65,7 +68,6 @@
 
         {{/each}}
       </div>
-    
     </div>
   </div>
 </div>

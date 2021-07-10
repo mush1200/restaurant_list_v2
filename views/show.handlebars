@@ -5,7 +5,10 @@
   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
     <a class="btn btn-outline-success" href="/restaurants/{{ restaurant._id }}/edit" role="button">Edit</a>
     <a class="btn btn-outline-primary" href="/" role="button">Back</a>
-    <a class="btn btn-outline-danger" href="/restaurants/{{restaurant._id}}/delete" role="button">Delete</a>
+    <form action="/restaurants/{{restaurant._id}}?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-outline-danger">Delete</button>
+      {{!-- <a class="btn btn-outline-danger" role="button">Delete</a> --}}
+    </form>
   </div>
 </div>
 
