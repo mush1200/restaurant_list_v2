@@ -7,13 +7,10 @@ const usePassport = require('./config/passport')
 const Restaurant = require('./models/restaurant')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
-usePassport(app)
 const routes = require('./routes/index')
 require('./config/mongoose')
 
 
-
-app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
@@ -22,7 +19,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
+usePassport(app)
 app.use(routes)
 
 
