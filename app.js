@@ -2,9 +2,12 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const app = express()
 const port = 3000
+const session = require('express-session')
+const usePassport = require('./config/passport')
 const Restaurant = require('./models/restaurant')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+usePassport(app)
 const routes = require('./routes/index')
 require('./config/mongoose')
 
@@ -14,11 +17,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
 app.use(methodOverride('_method'))
 app.use(routes)
-
-
-
 
 
 app.get('/search', (req, res) => {
