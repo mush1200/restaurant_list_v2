@@ -1,8 +1,9 @@
 # 餐廳清單
-一個用Express和MongoDB所建立的餐廳清單，可以瀏覽所有餐廳、搜尋特定餐廳、查看餐廳詳細資訊，還可以新增、修改、刪除餐廳資料。
+一個用Express和MongoDB所建立的餐廳清單，有使用者登入註冊系統，登入後可以瀏覽該使用者的擁有的餐廳、搜尋特定餐廳、查看餐廳詳細資訊，還可以新增、修改、刪除餐廳資料。
 
 # 專案功能
-1. 使用者可以瀏覽全部餐廳
+1. 使用者可以註冊帳號或是用Facebook第三方登入
+1. 使用者可以瀏覽屬於他自己的全部餐廳
 2. 使用者可以查看餐廳詳細資訊
 3. 使用者可以依據餐廳名稱、類別搜尋特定餐廳
 4. 使用者可以新增餐廳和其相關資訊
@@ -31,3 +32,11 @@
 `npm run dev`
 6. 出現以下訊息後，即可在 http://localhost:3000 開始使用
 `The Express server is running on http://localhost:3000.`
+# 預設者使用者 
+email: user1@example.com
+<br>
+password: 12345678
+
+email: user2@example.com
+<br>
+password: 12345678
