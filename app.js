@@ -1,7 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const app = express()
-const port = 3000
 const session = require('express-session')
 const usePassport = require('./config/passport')
 const Restaurant = require('./models/restaurant')
@@ -15,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 const routes = require('./routes/index')
 require('./config/mongoose')
 
-
+const port = process.env.port
 app.use(express.static('public'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
